@@ -1,0 +1,560 @@
+html {
+	height: 100%;
+	background-color: rgb(128, 128, 128);
+}
+/* All */
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+/* Bg fixed for not support device */
+.not-support-bg-fixed {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: url(https://content.schools.by/13grodno/library/room-of-military-glory__bg-img.gif);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: rgb(128, 128, 128);
+}
+/* Preloader */
+.bg-fixed-lazy {
+	background-image: url(https://content.schools.by/13grodno/library/room-of-military-glory__bg-img--lazy.gif);
+}
+.not-support-bg-fixed.preloader {			
+	z-index: 1001;
+}
+/* Visible element */
+.visible {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.25s linear;
+}
+/* Hidden element */
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 0.25s, opacity 0.25s linear, font-size 0.5s;
+}
+/* Body */
+body {
+	display: -ms-flexbox;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	font-size: 2vh;
+	font-family: Georgia, serif;
+	line-height: 1;
+	color: #000000;
+	/*background-image: url(https://content.schools.by/13grodno/library/background-image-WOW.gif);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;*/
+	background-color: rgb(128, 128, 128);
+	overflow-y: hidden;
+	overflow-x: scroll;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+}
+/* Custom scrollbar */
+.red-scroll::-webkit-scrollbar {
+	width: 0.5em;
+	background-color: gray;
+}
+/* Track */
+.red-scroll::-webkit-scrollbar-track {
+	background-color: burlywood;
+	border-radius: 1em;
+	box-shadow: inset 0 0 0.5em red;
+}
+/* Handle */
+.red-scroll::-webkit-scrollbar-thumb {
+	background: red;
+	border-radius: 1em;
+}
+/* Handle on hover */
+.red-scroll::-webkit-scrollbar-thumb:hover {
+	background: #b30000;
+}
+/* Header, main and footer */
+header, main, footer {
+	-webkit-flex: auto;
+	flex: auto;
+	padding: 0.25em 0;
+	margin: 0.25em 1.5em;
+	background-color: transparent;
+}
+/* Header and footer */
+header, footer {
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	font-weight: bold;
+}
+/* Sticky text header and footer */
+header > a, footer > a {
+	position: sticky;
+	left: 1.5em;
+	text-decoration: none;
+	margin: auto 0;
+}
+/* Header title */
+header > .title {
+	font-size: 2em;
+	color: red;
+	left: 0.75em;
+	text-shadow: 
+		#000 0.035em 0 0, #000 -0.035em 0 0,
+		#000 0 0.035em 0, #000 0 -0.035em 0;
+}
+/* Wrapper */
+.wrap {
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+}
+/* Footer link */
+footer > .link {
+	color: black;
+	text-shadow: 
+		#fff 0.05em 0 0, #fff -0.05em 0 0,
+		#fff 0 0.05em 0, #fff 0 -0.05em 0;
+}
+/* Stand */
+.stand {
+	-webkit-flex: auto;
+	flex: auto;
+	min-width: 25em;
+	width: 25em;
+	max-width: 25em;
+	display: -ms-flexbox;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	perspective: 2020px;
+}
+/* Title stand */
+.stand > .title {
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	position: relative;
+	background-color: rgba(255, 0, 0, 0.75);
+	border-top: 0.25em solid green;
+	border-bottom: 0.25em solid green;
+	border-radius: 2em;
+}
+/* Content stand */
+.stand > .content {
+	-webkit-flex: auto;
+	flex: auto;
+	padding: 0 0.5em;
+	margin-top: 0.5em;
+	background-color: rgba(255, 0, 0, 0.75);
+	border: 0.25em solid black;
+	border-left: 0.25em solid black;
+	border-right: 0.25em solid black;
+	border-radius: 0 0 2em 2em;
+	overflow: hidden;
+}
+.wrap.content, .wrap.img-text, .wrap.one-img, .wrap.column, .wrap.img-hero {
+	flex-flow: column nowrap;
+}
+/* Title stand's svg */
+.title > .svg {
+	position: absolute;
+	width: 5em;
+	height: 5em;
+	top: -0.5em;
+	left: -0.5em;
+	background: url(https://content.schools.by/13grodno/library/star.svg) no-repeat center center /contain;
+	animation: rotate 5s ease-in 0s infinite;
+}
+.ease-out {
+	animation-timing-function: ease-out !important;
+}
+.ease-in-out {
+	animation-timing-function: ease-in-out !important;
+}
+.linear {
+	animation-timing-function: linear !important;
+}
+/* Animation rotate */
+@keyframes rotate {
+	100% {
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+/* Title text stand's */
+.title > .text {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-left: 3.25em;
+	color: white;
+	text-shadow: 
+		#000 0.05em 0 0, #000 -0.05em 0 0,
+		#000 0 0.05em 0, #000 0 -0.05em 0;
+}
+/* Auto flex row content stand's */
+.content > .row {
+	-webkit-flex: auto;
+	flex: auto;
+	margin: 0.25em 0;
+}
+.flex-0 {
+	-webkit-flex: 0 1 auto !important;
+	flex: 0 1 auto !important;
+}
+.flex-2 {
+	-webkit-flex: 2 1 auto !important;
+	flex: 2 1 auto !important;
+}
+.flex-3 {
+	-webkit-flex: 3 1 auto !important;
+	flex: 3 1 auto !important;
+}
+/* Height row's equals text */
+.row.text{
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	padding: 0.25em;
+}
+/* Center text with burlywood bgcolor */
+.text.center-burlywood {
+	text-align: center;
+	font-weight: bold;
+	background-color: burlywood;
+}
+/* Button with bgimage open book */
+.btn-inf {
+	position: absolute;
+	width: 3em;
+	height: 3em;
+	left: 0.25em;
+	font-size: 1em !important;
+	cursor: pointer !important;
+	background: url(https://content.schools.by/13grodno/library/open-book.svg) no-repeat center center /contain;
+	animation: rotateY 2s linear 0s infinite;
+	z-index: 11;
+}
+.btn-inf:focus, .btn-close:focus, .btn-document:focus, .btn-photo:focus {
+	outline: unset;
+}
+/* Stop animation with hover btn */
+.btn-inf:hover, .btn-document:hover, .btn-photo:hover {
+	animation: unset;
+}		
+/* Rotate an 90deg about Y */
+@keyframes rotateY {
+	50% {
+		-o-transform: rotateY(90deg);
+		-ms-transform: rotateY(90deg);
+		-moz-transform: rotateY(90deg);
+		-webkit-transform: rotateY(90deg);
+		transform: rotateY(90deg);
+	}
+	100% {
+		-o-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		-moz-transform: rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+}
+/* Block fixed */
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 2em;
+	background-color: rgba(128, 128, 128, 0.75);
+	z-index: 1111;
+}
+/* Rotate-scale btn close */
+.btn-close {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	top: 1em;
+	left: 1em;
+	font-size: 1em !important;
+	cursor: pointer !important;
+	background: url(https://content.schools.by/13grodno/library/close.svg) no-repeat center center /contain;
+	animation: rotate 5s linear 0s infinite;
+	z-index: 11;
+}
+.btn-close:hover {
+	animation: scale 1s linear 0s infinite;
+}
+/* Animation scale */
+@keyframes scale {
+	from {
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		-moz-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	50% {
+		-o-transform: scale(1.25);
+		-ms-transform: scale(1.25);
+		-moz-transform: scale(1.25);
+		-webkit-transform: scale(1.25);
+		transform: scale(1.25);
+	}
+	to {
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		-moz-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+/* Bgcolor gray */
+.gray {
+	width: 100%;
+	height: 100%;
+	color: white;
+	padding: 1em;
+	background-color: rgba(128, 128, 128, 1);
+	border-radius: 1em;
+}
+/* Overflow-y scroll */
+.overflow {
+	padding-right: 0.5em;
+	border-radius: 1em 0 0 1em;
+	overflow-y: scroll;
+}
+h2, h3 {
+	text-align: right;
+	color: burlywood;
+	margin: 0.25em 0;
+}
+p {
+	text-align: justify;
+	margin: 0.5em 0;
+}
+/* Img with text */
+.img-text, .one-img, .img-hero {
+	-webkit-flex: auto;
+	flex: auto;
+	margin: 0 0.25em;
+}
+.img-text, .img-hero, .have-text {
+	position: relative;
+	overflow: hidden;
+}
+.img-text::before, .img-hero::before, .have-text::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	transition: opacity 1s;
+	background: no-repeat center /contain rgba(128, 128, 128, 0.5);
+}
+.img-text:hover::before, .img-hero:hover::before, .have-text:hover::before {
+	opacity: 1;
+	transition: all 0.5s 0.25s;
+	cursor: pointer;
+	background-image: url(https://content.schools.by/13grodno/library/expand.svg);
+}
+/* Loading image */
+.lazy {
+	position: relative;
+}
+.lazy::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+	background: url(https://content.schools.by/13grodno/library/load.svg) no-repeat center center /contain !important;
+	z-index: 1;
+}
+.lazy:hover::before {
+	cursor: wait;
+}
+/* Auto height img */
+.img-text > img, .one-img > img, .img-hero > img {
+	-webkit-flex: auto;
+	flex: auto;
+	/*width: 100%;*/
+	width: inherit;
+}
+.img-text > .text {
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	font-size: 0.55em;
+	padding: 0 0.25em;
+	margin: 0.25em 0 0 0;
+}
+/* First element */
+.first {
+	margin-left: 0 !important;
+	margin-top: 0 !important;
+}
+/* Last element */
+.last {
+	margin-right: 0 !important;
+	margin-bottom: 0 !important;
+}
+.wrap.column > .img { 
+	-webkit-flex: auto;
+	flex: auto;
+}
+.text.center-white {
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+}
+.img-hero > .hide-text, .have-text > .hide-text {
+	display: none;
+}
+.only-text {
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	margin: 0 0.25em;
+}
+.only-text > .text {
+	-webkit-flex: 0 1 auto;
+	flex: 0 1 auto;
+	font-size: 0.65em;
+	padding: 0.25em;
+}
+.one-child {
+	margin: 0 !important;
+}
+.width-20 {
+	-webkit-flex: 1 1 20%;
+	flex: 1 1 20%;
+}
+/* Btn with bgimage document */
+.btn-document {
+	position: absolute;
+	top: 100%;
+	width: 2em;
+	height: 2em;
+	font-size: 1em !important;
+	cursor: pointer !important;
+	background: url(https://content.schools.by/13grodno/library/document.svg) no-repeat center center /contain;
+	animation: rotateY 3s linear 0s infinite;
+	z-index: 11;
+}
+/* Btn with bgimage camera */
+.btn-photo {
+	position: absolute;
+	top: 100%;
+	width: 2.5em;
+	height: 2em;
+	font-size: 1em !important;
+	cursor: pointer !important;
+	background: url(https://content.schools.by/13grodno/library/camera.svg) no-repeat center center /contain;
+	animation: rotateY 2.5s linear 0s infinite;
+	z-index: 11;
+}
+.delay-1s {
+	animation-delay: 1s;
+}
+/* Before after slider */
+.ba-slider {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.ba-slider img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+/* Before img */
+.resize {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 50%;
+	overflow: hidden;
+}
+/* Btn for resize */
+.handle {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	margin-left: -2px;
+	background: rgba(0, 0, 0, 0.75);
+	cursor: ew-resize;
+	overflow:visible;
+}
+.handle:hover {
+	outline: black auto 1px;
+}
+.handle::before {
+	position: absolute;
+	top: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	margin: -0.75em 0 0 -0.75em;
+	content: '\21d4';
+	color: white;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+	line-height: 1.5em;
+	background: burlywood;
+	border: 1px solid #e6a600;
+	border-radius: 50%;
+	transition: all 0.25s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.5), inset 0 1.5em 1em -0.5em #ffd466;
+}
+.draggable::before {
+	-webkit-transform: scale(0.75);
+	-ms-transform: scale(0.75);
+	transform: scale(0.75);
+}
+/* Hidden scroll body if active fixed block */
+.active-fixed {
+	overflow-x: hidden;
+}
+
+.new {
+	position: relative;
+}
+.new::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(128, 128, 128, 0.75);
+	border-radius: 2em;
+	z-index: 2;
+}
