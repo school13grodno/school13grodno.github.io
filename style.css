@@ -18,7 +18,7 @@ html {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background-image: url(https://content.schools.by/13grodno/library/room-of-military-glory__bg-img.gif);
+	background-image: url(images/bg-img.gif);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -26,7 +26,7 @@ html {
 }
 /* Preloader */
 .bg-fixed-lazy {
-	background-image: url(https://content.schools.by/13grodno/library/room-of-military-glory__bg-img--lazy.gif);
+	background-image: url(images/bg-img--lazy.gif);
 }
 .not-support-bg-fixed.preloader {			
 	z-index: 1001;
@@ -55,7 +55,7 @@ body {
 	font-family: Georgia, serif;
 	line-height: 1;
 	color: #000000;
-	/*background-image: url(https://content.schools.by/13grodno/library/background-image-WOW.gif);
+	/*background-image: url(images/bg-img.gif);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -177,7 +177,7 @@ footer > .link {
 	height: 5em;
 	top: -0.5em;
 	left: -0.5em;
-	background: url(https://content.schools.by/13grodno/library/star.svg) no-repeat center center /contain;
+	background: url(images/star.svg) no-repeat center center /contain;
 	animation: rotate 5s ease-in 0s infinite;
 }
 .ease-out {
@@ -248,7 +248,7 @@ footer > .link {
 	left: 0.25em;
 	font-size: 1em !important;
 	cursor: pointer !important;
-	background: url(https://content.schools.by/13grodno/library/open-book.svg) no-repeat center center /contain;
+	background: url(images/open-book.svg) no-repeat center center /contain;
 	animation: rotateY 2s linear 0s infinite;
 	z-index: 11;
 }
@@ -296,7 +296,7 @@ footer > .link {
 	left: 1em;
 	font-size: 1em !important;
 	cursor: pointer !important;
-	background: url(https://content.schools.by/13grodno/library/close.svg) no-repeat center center /contain;
+	background: url(images/close.svg) no-repeat center center /contain;
 	animation: rotate 5s linear 0s infinite;
 	z-index: 11;
 }
@@ -376,7 +376,7 @@ p {
 	opacity: 1;
 	transition: all 0.5s 0.25s;
 	cursor: pointer;
-	background-image: url(https://content.schools.by/13grodno/library/expand.svg);
+	background-image: url(images/expand.svg);
 }
 /* Loading image */
 .lazy {
@@ -390,7 +390,7 @@ p {
 	right: 0;
 	bottom: 0;
 	opacity: 1;
-	background: url(https://content.schools.by/13grodno/library/load.svg) no-repeat center center /contain !important;
+	background: url(images/load.svg) no-repeat center center /contain !important;
 	z-index: 1;
 }
 .lazy:hover::before {
@@ -460,7 +460,7 @@ p {
 	height: 2em;
 	font-size: 1em !important;
 	cursor: pointer !important;
-	background: url(https://content.schools.by/13grodno/library/document.svg) no-repeat center center /contain;
+	background: url(images/document.svg) no-repeat center center /contain;
 	animation: rotateY 3s linear 0s infinite;
 	z-index: 11;
 }
@@ -472,7 +472,7 @@ p {
 	height: 2em;
 	font-size: 1em !important;
 	cursor: pointer !important;
-	background: url(https://content.schools.by/13grodno/library/camera.svg) no-repeat center center /contain;
+	background: url(images/camera.svg) no-repeat center center /contain;
 	animation: rotateY 2.5s linear 0s infinite;
 	z-index: 11;
 }
