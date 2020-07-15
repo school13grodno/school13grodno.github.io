@@ -23,6 +23,7 @@ html {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-color: rgb(128, 128, 128);
+	z-index: -1;
 }
 /* Preloader */
 .bg-fixed-lazy {
