@@ -20,6 +20,8 @@ window.onload = function() {
 	setTimeout(function() {
 		document.getElementById("preloader").classList.remove('preloader');
 	}, 25);
+	/* Unlock contents for btn */
+	document.getElementById('contents-for-btn').style.display = '';
 	/* Loading image */
 	[].forEach.call(document.querySelectorAll("[data-src]"), function(el) {
 		if (el.tagName == 'IMG') {
