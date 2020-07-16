@@ -29,7 +29,7 @@ html {
 .bg-fixed-lazy {
 	background-image: url(images/bg-img--lazy.gif);
 }
-.not-support-bg-fixed.preloader {			
+.not-support-bg-fixed.preloader {
 	z-index: 1001;
 }
 /* Visible element */
@@ -400,7 +400,6 @@ p {
 .img-text > img, .one-img > img, .img-hero > img {
 	-webkit-flex: auto;
 	flex: auto;
-	/*width: 100%;*/
 	width: inherit;
 }
 .img-text > .text {
