@@ -20,8 +20,6 @@ window.onload = function() {
 	setTimeout(function() {
 		document.getElementById("preloader").classList.remove('preloader');
 	}, 25);
-	/* Unlock contents for btn */
-	document.getElementById('contents-for-btn').style.display = '';
 	/* Loading image */
 	[].forEach.call(document.querySelectorAll("[data-src]"), function(el) {
 		if (el.tagName == 'IMG') {
@@ -94,7 +92,7 @@ function showBlock(id) {
 		/* If image is loaded */
 		if (!el.classList.contains('lazy')) {
 			let _expander = document.getElementById('expander');
-			let _result = '<button class="btn-close" onclick="closeBlock();"></button><div class="wrap column gray">';
+			let _result = '<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button><div class="wrap column gray">';
 			if (el.children.length != 0) {
 				for (let i = 0; i < el.children.length; i++) {
 					if (el.children.item(i).tagName == 'DIV') {
@@ -116,7 +114,7 @@ function showBlock(id) {
 		/* If image is loaded */
 		if (!el.classList.contains('lazy')) {
 			let _expander = document.getElementById('expander');
-			let _result = '<button class="btn-close" onclick="closeBlock();"></button><div class="gray overflow red-scroll">';
+			let _result = '<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button><div class="gray overflow red-scroll">';
 			if (el.children.length != 0) {
 				for (let i = 0; i < el.children.length; i++) {
 					if (el.children.item(i).tagName == 'DIV') {
