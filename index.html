@@ -44,6 +44,21 @@
 			z-index: 1001;
 		}
 	</style>
+	<!-- Registration service worker -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('scripts/pwabuilder-sw.js').then(
+					function(registration) {
+						console.log('ServiceWorker registration successful with scope: ', registration.scope);
+					},
+					function(err) {
+						console.log('ServiceWorker registration failed: ', err);
+					}
+				);
+			});
+		}
+</script>
 </head>
 <body class="red-scroll">
 	<!-- Preloader -->
@@ -1110,7 +1125,5 @@
 		<a class="link" title="Перейти на сайт школы" href="https://13grodno.schools.by/">13grodno.schools.by</a>
 	</footer>
 	<script src="scripts/script.js"></script>
-	<!-- Service worker -->
-	<script type="module" src="scripts/service-worker.js"></script>
 </body>
 </html>
