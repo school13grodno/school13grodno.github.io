@@ -35,6 +35,15 @@
 	<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
 	<meta name="theme-color" content="transparent">
 	<link rel="stylesheet" href="style.css">
+	<style>
+		/* Preloader */
+		.bg-fixed-lazy {
+			background-image: url(images/bg-img--lazy.gif);
+		}
+		.not-support-bg-fixed.preloader {
+			z-index: 1001;
+		}
+	</style>
 </head>
 <body class="red-scroll">
 	<!-- Preloader -->
@@ -935,10 +944,10 @@
 		</div>
 	</main>
 	<!-- Content for button -->
-	<div id="contents-for-btn" style="position: absolute; display: none; width: 0; height: 0;">
+	<div style="position: absolute; width: 0; height: 0;">
 		<!-- Content fot stand 1 -->
 		<div id="Stand-1__btn-inf-1" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">План Барбаросса - цели и значение</h2>
 				<p>План «Барбаросса» (операция «Барбаросса» 1941 года) – план стремительного военного нападения войск Германии на СССР во время Второй Мировой войны.</p>
@@ -953,7 +962,7 @@
 			</div>
 		</div>
 		<div id="Stand-1__btn-inf-2" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">Они первыми приняли бой</h2>
 				<p>На рассвете 22 июня 1941 г. германская армия всей своей мощью обрушилась на советскую землю. Началась Великая Отечественная война, война советского народа с фашистскими оккупантами, продолжавшаяся 1418 дней и ночей.</p>
@@ -964,7 +973,7 @@
 			</div>
 		</div>
 		<div id="Stand-1__btn-inf-3" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">Родина - мать зовёт</h2>
 				<p>Песня «Священная война», ставшая своеобразным гимном Великой Отечественной войны, была написана сразу же после её начала поэтом В. И. Лебедевым-Кумачом, и, тогда ещё в виде стихов, была продекламирована по радио 24 июня 1941 года знаменитым в ту пору актёром Малого театра Александром Остужевым. В тот же день стихи со знаменитой первой строчкой «Вставай, страна огромная!» были опубликованы «Известиями» и «Красной звездой», и с тех пор стали звучать по радио регулярно.</p>
@@ -976,7 +985,7 @@
 		</div>
 		<!-- Content fot stand 2 -->
 		<div id="Stand-2__btn-inf-1" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">Оккупация белорусских городов</h2>
 				<p>На оккупированной территории Беларуси немецко-фашистские захватчики вводили новый порядок – государственную систему политических, экономических и военных мер, направленных на ликвидацию советского строя, эксплуатацию национальных богатств и ресурсов, порабощение и уничтожение людей. Ее идейной основой была «расовая теория» нацистов, утверждавшая превосходство арийской расы над всеми другими народами, необходимость расширения «жизненного пространства» для немцев.</p>
@@ -990,7 +999,7 @@
 			</div>
 		</div>
 		<div id="Stand-2__btn-inf-2" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">«Новый порядок»</h2>
 				<p>Для порабощения и уничтожения людей в Беларуси гитлеровцы создали систему концентрационных лагерей и тюрем, где без суда и определения сроков заключения находились десятки тысяч людей. Всего на территории Беларуси было свыше 260 лагерей смерти, их филиалов и отделений для военнопленных, для гражданского населения, женских лагерей, пересыльных лагерей СС, гетто и других. Самым крупным не только в Беларуси, но и на всей оккупированной врагом территории являлся Тростенецкий лагерь смерти, в котором было уничтожено свыше 200 тысяч человек. За годы войны Беларусь потеряла каждого третьего своего гражданина.</p>
@@ -1002,7 +1011,7 @@
 		</div>
 		<!-- Content fot stand 3 -->
 		<div id="Stand-3__btn-inf-1" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">Гродно с 23 июня 1941 &ndash; 16(24) июля 1944</h2>
 				<p>Гродненская область была поделена на три части. Генеральная округа Беларуси (Беларутения): Лидский, Новогрудский и Слонимский районы. Генеральная округа Литвы: Ошмянский, Островецкий, Сморгоньский районы.  22 июля 1941 года была создана специальная округа «Белосток»: г. Гродно, г. Волковыск, Зельвенский, Мостовский, Щучинский и Свислочский районы.</p>
@@ -1017,7 +1026,7 @@
 			</div>
 		</div>
 		<div id="Stand-3__btn-inf-2" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">Бойцы невидимого фронта</h2>
 				<p>Белорусская земля в годы фашистской оккупации была залита кровью сотен тысяч людей. Но народ Белоруссии не покорился, с первых же дней вражеского нашествия он начал поистине всенародную борьбу против фашистских захватчиков. На оккупированной территории была создана широкая сеть подпольных организаций, развернулось партизанское движение.</p>
@@ -1027,14 +1036,14 @@
 		</div>
 		<!-- Content fot stand 4 -->
 		<div id="Stand-4__btn-document-1" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="wrap column gray lazy">
 				<div class="img" data-src="images/stand-4/Наградной_лист_Ордена_красной_звезды_96dpi.jpg" src="images/stand-4/lazy/Наградной_лист_Ордена_красной_звезды_lazy.jpg"></div>
 				<div class="text center-white">Наградной лист «Ордена красной звезды»</div>
 			</div>
 		</div>
 		<div id="Stand-4__btn-document-2" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="wrap column gray lazy">
 				<div class="img" data-src="images/stand-4/Наградной_лист_Медали_партизану_отечественной_войны_96dpi.jpg" src="images/stand-4/lazy/Наградной_лист_Медали_партизану_отечественной_войны_lazy.jpg"></div>
 				<div class="text center-white">Наградной лист «Медали партизану отечественной войны»</div>
@@ -1042,7 +1051,7 @@
 		</div>
 		<!-- Content fot stand 5 -->
 		<div id="Stand-5__btn-inf-1" class="fixed hidden" onclick="closeBlock();">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray overflow red-scroll">
 				<h2 class="first">Белорусская операция «Багратион»</h2>
 				<p>Красная Армия. Сталин принял окончательное решение о проведении летней кампании, в том числе и Белорусской операции, в конце апреля. Заместителю начальника Генерального штаба А. И. Антонову было дано указание организовать в Генштабе работу по планированию операций. План по освобождению Белоруссии получила кодовое название – операция «Багратион». 20 мая 1944 года Генеральный штаб завершил разработку плана наступательной операции. В Ставку были вызваны А. М. Василевский, А. И. Антонов и Г. К. Жуков. 22 мая в Ставке были приняты командующие фронтами И. Х. Баграмян, И. Д. Черняховский, К. К. Рокоссовский, чтобы выслушать их соображения по поводу операции. Координация войск фронтов была поручена Василевскому и Жукову, они выехали в войска в начале июня.</p>
@@ -1056,38 +1065,38 @@
 		</div>
 		<!-- Content fot stand 6 -->
 		<div id="Stand-6__btn-photo-1" class="fixed hidden">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray">
 				<div class="ba-slider lazy">
 					<img alt="" width="25" height="25" data-src="images/stand-6/Мост_after_96dpi.jpg" src="images/stand-6/lazy/Мост_after_lazy.jpg">
 					<div class="resize">
 						<img alt="" width="25" height="25" data-src="images/stand-6/Мост_before_96dpi.jpg" src="images/stand-6/lazy/Мост_before_lazy.jpg">
 					</div>
-					<button class="handle"></button>
+					<button aria-label="Переместить" class="handle"></button>
 				</div>
 			</div>
 		</div>
 		<div id="Stand-6__btn-photo-2" class="fixed hidden">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray">
 				<div class="ba-slider lazy">
 					<img alt="" width="25" height="25" data-src="images/stand-6/Пересечение_улиц_Батория_и_Парижской_коммуны_after_96dpi.jpg" src="images/stand-6/lazy/Пересечение_улиц_Батория_и_Парижской_коммуны_after_lazy.jpg">
 					<div class="resize">
 						<img alt="" width="25" height="25" data-src="images/stand-6/Пересечение_улиц_Батория_и_Парижской_коммуны_before_96dpi.jpg" src="images/stand-6/lazy/Пересечение_улиц_Батория_и_Парижской_коммуны_before_lazy.jpg">
 					</div>
-					<button class="handle"></button>
+					<button aria-label="Переместить" class="handle"></button>
 				</div>
 			</div>
 		</div>
 		<div id="Stand-6__btn-photo-3" class="fixed hidden">
-			<button class="btn-close" onclick="closeBlock();"></button>
+			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="gray">
 				<div class="ba-slider lazy">
 					<img alt="" width="25" height="25" data-src="images/stand-6/Дворец_культуры_текстильщиков_after_96dpi.jpg" src="images/stand-6/lazy/Дворец_культуры_текстильщиков_after_lazy.jpg">
 					<div class="resize">
 						<img alt="" width="25" height="25" data-src="images/stand-6/Дворец_культуры_текстильщиков_before_96dpi.jpg" src="images/stand-6/lazy/Дворец_культуры_текстильщиков_before_lazy.jpg">
 					</div>
-					<button class="handle"></button>
+					<button aria-label="Переместить" class="handle"></button>
 				</div>
 			</div>
 		</div>
@@ -1100,6 +1109,8 @@
 	<footer>
 		<a class="link" title="Перейти на сайт школы" href="https://13grodno.schools.by/">13grodno.schools.by</a>
 	</footer>
-	<script async src="scripts/script.js"></script>
+	<script src="scripts/script.js"></script>
+	<!-- Service worker -->
+	<script type="module" src="scripts/service-worker.js"></script>
 </body>
 </html>

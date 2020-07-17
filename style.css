@@ -25,13 +25,6 @@ html {
 	background-color: rgb(128, 128, 128);
 	z-index: -1;
 }
-/* Preloader */
-.bg-fixed-lazy {
-	background-image: url(images/bg-img--lazy.gif);
-}
-.not-support-bg-fixed.preloader {
-	z-index: 1001;
-}
 /* Visible element */
 .visible {
 	visibility: visible;
@@ -385,10 +378,10 @@ p {
 .lazy::before {
 	content: '';
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	top: 25%;
+	left: 25%;
+	right: 25%;
+	bottom: 25%;
 	opacity: 1;
 	background: url(images/load.svg) no-repeat center center /contain !important;
 	z-index: 1;
@@ -518,20 +511,13 @@ p {
 .handle::before {
 	position: absolute;
 	top: 50%;
-	width: 1.5em;
-	height: 1.5em;
-	margin: -0.75em 0 0 -0.75em;
-	content: '\21d4';
-	color: white;
-	font-weight: bold;
-	font-size: 1.5em;
-	text-align: center;
-	line-height: 1.5em;
-	background: burlywood;
-	border: 1px solid #e6a600;
+	content: '';
+	width: 3em;
+	height: 3em;
+	margin: -1.5em 0 0 -1.5em;
 	border-radius: 50%;
+	background: url(images/double-arrow.svg) no-repeat center center /contain !important;
 	transition: all 0.25s ease;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.5), inset 0 1.5em 1em -0.5em #ffd466;
 }
 .draggable::before {
 	-webkit-transform: scale(0.75);
