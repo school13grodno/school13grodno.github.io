@@ -526,7 +526,7 @@ p {
 }
 /* Hidden scroll body if active fixed block */
 .active-fixed {
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 }
 
 .new {
