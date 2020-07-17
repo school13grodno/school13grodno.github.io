@@ -7,6 +7,8 @@
 	"display": "fullscreen",
 	"orientation": "natural",
 	"lang": "Russian",
+	"background_color": "#808080",
+	"theme_color": "#deb887",
 	"icons": [
 		{
 			"src": "images/icons/android-icon-72x72.png",
