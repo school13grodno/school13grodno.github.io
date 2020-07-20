@@ -20,7 +20,7 @@ self.addEventListener('install', async (event) => {
 });
 
 self.addEventListener('activate', function(event) {
-	caches.has('pwabuilde-page').then(function(hasCache) {
+	caches.has('pwabuilder-page').then(function(hasCache) {
 		if (!hasCache) {
 			caches.delete(hasCache);
 		} else {
