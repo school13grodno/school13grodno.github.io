@@ -1,9 +1,13 @@
 // This is the "Offline page" service worker
-const CACHE = "pwabuilder-page";
+const CACHE = "room-of-military-glory_v1.2.1";
 // TODO: replace the following with the correct offline fallback page
-const offlineFallbackPage = "index.html";
+const _myAssets = [
+	"index.html",
+	"style.css",
+	"scripts/script.js"
+];
 
-self.addEventListener("message", (event) => {
+self.addEventListener('message', (event) => {
 	if (event.data && event.data.type === "SKIP_WAITING") {
 		self.skipWaiting();
 	}
@@ -11,14 +15,20 @@ self.addEventListener("message", (event) => {
 
 self.addEventListener('install', async (event) => {
 	event.waitUntil(
-		caches.open(CACHE).then((cache) => cache.addAll(
-			[
-				offlineFallbackPage,
-				'scripts/script.js',
-				'style.css'
-			]
-		))
+		caches.open(CACHE).then((cache) => cache.addAll(_myAssets))
 	);
+});
+
+self.addEventListener('activate', function(event) {
+	caches.has('pwabuilde-page').then(function(hasCache) {
+		if (!hasCache) {
+			caches.delete(hasCache);
+		} else {
+			caches.open(CACHE).then(function(cache) {
+				return cache.addAll(_myAssets);
+			});
+		}
+	});
 });
 
 self.addEventListener('fetch', (event) => {
@@ -35,8 +45,8 @@ self.addEventListener('fetch', (event) => {
 				return networkResp;
 			} catch (error) {
 				const cache = await caches.open(CACHE);
-				const cachedResp = await cache.match(offlineFallbackPage);
-				return cachedResp;
+				/*const cachedResp = await cache.match(_offlineFallbackPage);*/
+				return cache /*cachedResp*/;
 			}
 		})());
 	}
