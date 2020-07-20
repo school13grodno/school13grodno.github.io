@@ -1,0 +1,6 @@
+CACHE MANIFEST
+# v1.1.0
+
+images/*
+scripts/script.js
+style.css
