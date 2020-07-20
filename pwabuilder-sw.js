@@ -13,8 +13,7 @@ self.addEventListener('install', async (event) => {
 	event.waitUntil(
 		caches.open(CACHE).then((cache) => cache.addAll(
 			[
-				offlineFallbackPage, 
-				'images/*',
+				offlineFallbackPage,
 				'scripts/script.js',
 				'style.css'
 			]
