@@ -1,53 +1,68 @@
-// This is the "Offline page" service worker
-const CACHE = "room-of-military-glory_v1.2.1";
-// TODO: replace the following with the correct offline fallback page
-const _myAssets = [
+// Versions service worker
+const _LATEST_VERSION = "room-of-military-glory_v1.2.2";
+const _PREVIOUS_VERSION = "room-of-military-glory_v1.2.1";
+// Resource cache
+const _ASSETS = [
 	"index.html",
 	"style.css",
-	"scripts/script.js"
+	"pwabuilder-sw.js",
+	"scripts/script.js",
+	"images/bg-img--lazy.gif",
+	"images/bg-img.gif",
+	"images/camera.svg",
+	"images/close.svg",
+	"images/document.svg",
+	"images/double-arrow.svg",
+	"images/expand.svg",
+	"images/load.svg",
+	"images/open-book.svg",
+	"images/star.svg",
+	"/"
 ];
-
+/*
 self.addEventListener('message', (event) => {
 	if (event.data && event.data.type === "SKIP_WAITING") {
 		self.skipWaiting();
 	}
 });
-
+*/
 self.addEventListener('install', async (event) => {
 	event.waitUntil(
-		caches.open(CACHE).then((cache) => cache.addAll(_myAssets))
+		caches.open(_LATEST_VERSION).then((cache) => {
+			return cache.addAll(_ASSETS)
+		}).catch((error) => console.log(error))
 	);
 });
 
-self.addEventListener('activate', function(event) {
-	caches.has('pwabuilder-page').then(function(hasCache) {
-		if (!hasCache) {
-			caches.delete(hasCache);
-		} else {
-			caches.open(CACHE).then(function(cache) {
-				return cache.addAll(_myAssets);
-			});
-		}
-	});
+self.addEventListener('activate', (event) => {
+	event.waitUntil(
+		caches.has(_PREVIOUS_VERSION).then((hasCache) => {
+			if (hasCache) {
+				caches.delete(_PREVIOUS_VERSION);
+				/*caches.open(_LATEST_VERSION).then((cache) => {
+					return cache.addAll(_ASSETS)
+				}).catch((error) => console.log(error));*/
+			}
+		})
+	);
 });
 
 self.addEventListener('fetch', (event) => {
-	if (event.request.mode === 'navigate') {
-		event.respondWith((async () => {
-			try {
-				const preloadResp = await event.preloadResponse;
-
-				if (preloadResp) {
-					return preloadResp;
-				}
-
-				const networkResp = await fetch(event.request);
-				return networkResp;
-			} catch (error) {
-				const cache = await caches.open(CACHE);
-				/*const cachedResp = await cache.match(_offlineFallbackPage);*/
-				return cache /*cachedResp*/;
-			}
-		})());
-	}
+	/*if (event.request.url === "https://school13grodno.github.io/") {
+		console.log('Online');
+	} else {*/
+		event.respondWith(
+			caches.match(event.request).then((resp) => {
+				return resp || fetch(event.request).then((response) => {
+					let _responseClone = response.clone();
+					caches.open(_LATEST_VERSION).then((cache) => {
+						cache.put(event.request, _responseClone);
+					});
+					return response;
+				});
+			}).catch(() => {
+				consloe.log('Need update!!!');
+			})
+		);
+	//}
 });
