@@ -1,11 +1,10 @@
 // Versions service worker
-const _LATEST_VERSION = "room-of-military-glory_v1.2.2";
-const _PREVIOUS_VERSION = "room-of-military-glory_v1.2.1";
+const _LATEST_VERSION = "room-of-military-glory_v1.2.3";
+const _PREVIOUS_VERSION = "room-of-military-glory_v1.2.2";
 // Resource cache
 const _ASSETS = [
-	"index.html",
+	"/",
 	"style.css",
-	"pwabuilder-sw.js",
 	"scripts/script.js",
 	"images/bg-img--lazy.gif",
 	"images/bg-img.gif",
@@ -16,16 +15,9 @@ const _ASSETS = [
 	"images/expand.svg",
 	"images/load.svg",
 	"images/open-book.svg",
-	"images/star.svg",
-	"/"
+	"images/star.svg"
 ];
-/*
-self.addEventListener('message', (event) => {
-	if (event.data && event.data.type === "SKIP_WAITING") {
-		self.skipWaiting();
-	}
-});
-*/
+
 self.addEventListener('install', async (event) => {
 	event.waitUntil(
 		caches.open(_LATEST_VERSION).then((cache) => {
@@ -39,30 +31,21 @@ self.addEventListener('activate', (event) => {
 		caches.has(_PREVIOUS_VERSION).then((hasCache) => {
 			if (hasCache) {
 				caches.delete(_PREVIOUS_VERSION);
-				/*caches.open(_LATEST_VERSION).then((cache) => {
-					return cache.addAll(_ASSETS)
-				}).catch((error) => console.log(error));*/
 			}
 		})
 	);
 });
 
 self.addEventListener('fetch', (event) => {
-	/*if (event.request.url === "https://school13grodno.github.io/") {
-		console.log('Online');
-	} else {*/
-		event.respondWith(
-			caches.match(event.request).then((resp) => {
-				return resp || fetch(event.request).then((response) => {
-					let _responseClone = response.clone();
-					caches.open(_LATEST_VERSION).then((cache) => {
-						cache.put(event.request, _responseClone);
-					});
-					return response;
+	event.respondWith(
+		caches.match(event.request).then((resp) => {
+			return resp || fetch(event.request).then((response) => {
+				let _responseClone = response.clone();
+				caches.open(_LATEST_VERSION).then((cache) => {
+					cache.put(event.request, _responseClone);
 				});
-			}).catch(() => {
-				consloe.log('Need update!!!');
-			})
-		);
-	//}
+				return response;
+			});
+		}).catch((error) => consloe.log(error))
+	);
 });
