@@ -96,7 +96,7 @@ header, footer {
 	font-weight: bold;
 }
 /* Sticky text header and footer */
-header > a, footer > a {
+header > a, footer > a.left {
 	position: sticky;
 	left: 1.5em;
 	text-decoration: none;
@@ -123,6 +123,15 @@ footer > .link {
 	text-shadow: 
 		#fff 0.05em 0 0, #fff -0.05em 0 0,
 		#fff 0 0.05em 0, #fff 0 -0.05em 0;
+}
+footer > a.right {
+	position: fixed;
+	right: 1.5em;
+	bottom: 0.25em;
+	width: 1.5em;
+	height: 1.5em;
+	margin: auto 0;
+	background: url(images/github.svg) no-repeat center center /contain;
 }
 /* Stand */
 .stand {
@@ -386,7 +395,7 @@ p {
 	background: url(images/load.svg) no-repeat center center /contain !important;
 	z-index: 1;
 }
-.lazy:hover::before {
+.lazy:hover, .lazy:hover::before {
 	cursor: wait;
 }
 /* Auto height img */

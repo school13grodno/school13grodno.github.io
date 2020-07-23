@@ -15,7 +15,8 @@ const _ASSETS = [
 	"images/expand.svg",
 	"images/load.svg",
 	"images/open-book.svg",
-	"images/star.svg"
+	"images/star.svg",
+	"images/github.svg"
 ];
 
 self.addEventListener('install', async (event) => {
