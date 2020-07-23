@@ -528,18 +528,3 @@ p {
 .active-fixed {
 	overflow-x: hidden !important;
 }
-
-.new {
-	position: relative;
-}
-.new::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(128, 128, 128, 0.75);
-	border-radius: 2em;
-	z-index: 2;
-}

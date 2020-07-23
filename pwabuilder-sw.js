@@ -1,6 +1,6 @@
 // Versions service worker
-const _LATEST_VERSION = "room-of-military-glory_v1.2.3";
-const _PREVIOUS_VERSION = "room-of-military-glory_v1.2.2";
+const _LATEST_VERSION = "room-of-military-glory_v1.3.0";
+const _PREVIOUS_VERSION = "room-of-military-glory_v1.2.3";
 // Resource cache
 const _ASSETS = [
 	"/",
@@ -46,6 +46,6 @@ self.addEventListener('fetch', (event) => {
 				});
 				return response;
 			});
-		}).catch((error) => consloe.log(error))
+		}).catch((error) => console.log(error))
 	);
 });
