@@ -96,7 +96,7 @@ header, footer {
 	font-weight: bold;
 }
 /* Sticky text header and footer */
-header > a, footer > a {
+header > a, footer > a.left {
 	position: sticky;
 	left: 1.5em;
 	text-decoration: none;
@@ -123,6 +123,15 @@ footer > .link {
 	text-shadow: 
 		#fff 0.05em 0 0, #fff -0.05em 0 0,
 		#fff 0 0.05em 0, #fff 0 -0.05em 0;
+}
+footer > a.right {
+	position: fixed;
+	right: 1.5em;
+	bottom: 0.25em;
+	width: 1.5em;
+	height: 1.5em;
+	margin: auto 0;
+	background: url(images/github.svg) no-repeat center center /contain;
 }
 /* Stand */
 .stand {
@@ -220,6 +229,10 @@ footer > .link {
 .flex-3 {
 	-webkit-flex: 3 1 auto !important;
 	flex: 3 1 auto !important;
+}
+.flex-4 {
+	-webkit-flex: 4 1 auto !important;
+	flex: 4 1 auto !important;
 }
 /* Height row's equals text */
 .row.text{
@@ -386,7 +399,7 @@ p {
 	background: url(images/load.svg) no-repeat center center /contain !important;
 	z-index: 1;
 }
-.lazy:hover::before {
+.lazy:hover, .lazy:hover::before {
 	cursor: wait;
 }
 /* Auto height img */
@@ -529,17 +542,17 @@ p {
 	overflow-x: hidden !important;
 }
 
-.new {
+.update {
 	position: relative;
 }
-.new::before {
-	content: '';
+.update::before {
 	position: absolute;
+	text-align: center;
+	content: '';
 	top: 0;
-	left: 0;
-	right: 0;
+	left: -0.5em;
+	right: -0.5em;
 	bottom: 0;
 	background-color: rgba(128, 128, 128, 0.75);
-	border-radius: 2em;
 	z-index: 2;
 }
