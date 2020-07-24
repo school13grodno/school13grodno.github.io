@@ -230,6 +230,10 @@ footer > a.right {
 	-webkit-flex: 3 1 auto !important;
 	flex: 3 1 auto !important;
 }
+.flex-4 {
+	-webkit-flex: 4 1 auto !important;
+	flex: 4 1 auto !important;
+}
 /* Height row's equals text */
 .row.text{
 	-webkit-flex: 0 1 auto;
@@ -536,4 +540,19 @@ p {
 /* Hidden scroll body if active fixed block */
 .active-fixed {
 	overflow-x: hidden !important;
+}
+
+.update {
+	position: relative;
+}
+.update::before {
+	position: absolute;
+	text-align: center;
+	content: '';
+	top: 0;
+	left: -0.5em;
+	right: -0.5em;
+	bottom: 0;
+	background-color: rgba(128, 128, 128, 0.75);
+	z-index: 2;
 }
