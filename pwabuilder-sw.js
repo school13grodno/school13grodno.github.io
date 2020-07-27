@@ -1,6 +1,6 @@
 // Versions service worker
-const _LATEST_VERSION = "room-of-military-glory_v1.3.0";
-const _PREVIOUS_VERSION = "room-of-military-glory_v1.2.3";
+const _LATEST_VERSION = "room-of-military-glory_v1.3.1";
+const _PREVIOUS_VERSION = "room-of-military-glory_v1.3.0";
 // Resource cache
 const _ASSETS = [
 	"/",
@@ -16,6 +16,7 @@ const _ASSETS = [
 	"images/load.svg",
 	"images/open-book.svg",
 	"images/star.svg",
+	"images/school-logo.png",
 	"images/github.svg"
 ];
 
