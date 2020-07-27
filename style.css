@@ -96,7 +96,7 @@ header, footer {
 	font-weight: bold;
 }
 /* Sticky text header and footer */
-header > a, footer > a.left {
+header > a, footer > .left {
 	position: sticky;
 	left: 1.5em;
 	text-decoration: none;
@@ -117,20 +117,27 @@ header > .title {
 	display: flex;
 	justify-content: space-between;
 }
-/* Footer link */
-footer > .link {
+footer > .text {
+	display: inline;
 	color: black;
 	text-shadow: 
 		#fff 0.05em 0 0, #fff -0.05em 0 0,
 		#fff 0 0.05em 0, #fff 0 -0.05em 0;
 }
-footer > a.right {
+/* Footer link */
+footer > .link {
 	position: fixed;
-	right: 1.5em;
-	bottom: 0.25em;
 	width: 1.5em;
 	height: 1.5em;
+	bottom: 0.25em;
 	margin: auto 0;
+}
+footer > .right-site {
+	right: 3.5em;
+	background: url(images/school-logo.png) no-repeat center center /contain;
+}
+footer > .right-git {	
+	right: 1.5em;
 	background: url(images/github.svg) no-repeat center center /contain;
 }
 /* Stand */
