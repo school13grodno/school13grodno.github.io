@@ -96,7 +96,7 @@ header, footer {
 	font-weight: bold;
 }
 /* Sticky text header and footer */
-header > a, footer > .left {
+header > .title, footer > .left {
 	position: sticky;
 	left: 1.5em;
 	text-decoration: none;
@@ -104,6 +104,7 @@ header > a, footer > .left {
 }
 /* Header title */
 header > .title {
+	display: inline;
 	font-size: 2em;
 	color: red;
 	left: 0.75em;
