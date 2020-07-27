@@ -1021,7 +1021,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Row 4 --><span style="height: 50%;" class="wrap column update">
+				<!-- Row 4 --><div style="height: 50%;" class="wrap column update">
 				<div class="row text center-burlywood">Наши будни</div>
 				<!-- Row 5 -->
 				<div class="row wrap flex-2">
@@ -1032,7 +1032,7 @@
 				<!-- Row 7 -->
 				<div class="row wrap flex-2">
 					
-				</div></span>
+				</div></div>
 			</div>
 		</div>
 	</main>
@@ -1131,14 +1131,14 @@
 		<div id="Stand-4__btn-document-1" class="fixed hidden" onclick="closeBlock();">
 			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="wrap column gray lazy">
-				<div class="img" data-src="images/stand-4/Наградной_лист_Ордена_красной_звезды_96dpi.jpg" src="images/stand-4/lazy/Наградной_лист_Ордена_красной_звезды_lazy.jpg"></div>
+				<div class="img" data-src="images/stand-4/Наградной_лист_Ордена_красной_звезды_96dpi.jpg" style="background: url(images/stand-4/lazy/Наградной_лист_Ордена_красной_звезды_lazy.jpg) no-repeat center /contain"></div>
 				<div class="text center-white">Наградной лист «Ордена красной звезды»</div>
 			</div>
 		</div>
 		<div id="Stand-4__btn-document-2" class="fixed hidden" onclick="closeBlock();">
 			<button aria-label="Закрыть" class="btn-close" onclick="closeBlock();"></button>
 			<div class="wrap column gray lazy">
-				<div class="img" data-src="images/stand-4/Наградной_лист_Медали_партизану_отечественной_войны_96dpi.jpg" src="images/stand-4/lazy/Наградной_лист_Медали_партизану_отечественной_войны_lazy.jpg"></div>
+				<div class="img" data-src="images/stand-4/Наградной_лист_Медали_партизану_отечественной_войны_96dpi.jpg" style="background: url(images/stand-4/lazy/Наградной_лист_Медали_партизану_отечественной_войны_lazy.jpg) no-repeat center /contain"></div>
 				<div class="text center-white">Наградной лист «Медали партизану отечественной войны»</div>
 			</div>
 		</div>
@@ -1206,7 +1206,7 @@
 	</footer>
 	<script src="scripts/script.js"></script>
 	<!-- Registration service worker -->
-	<script async>
+	<script>
 		if ('serviceWorker' in navigator) {
 			window.addEventListener('load', function() {
 				navigator.serviceWorker.register('/pwabuilder-sw.js').then(

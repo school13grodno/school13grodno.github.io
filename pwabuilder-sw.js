@@ -1,6 +1,6 @@
 // Versions service worker
-const _LATEST_VERSION = "room-of-military-glory_v1.3.1";
-const _PREVIOUS_VERSION = "room-of-military-glory_v1.3.0";
+const _LATEST_VERSION = "room-of-military-glory_v1.3.2";
+const _PREVIOUS_VERSION = "room-of-military-glory_v1.3.1";
 // Resource cache
 const _ASSETS = [
 	"/",
@@ -26,6 +26,7 @@ self.addEventListener('install', async (event) => {
 			return cache.addAll(_ASSETS)
 		}).catch((error) => console.log(error))
 	);
+	self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
