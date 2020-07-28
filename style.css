@@ -27,15 +27,20 @@ html {
 }
 /* Visible element */
 .visible {
-	visibility: visible;
-	opacity: 1;
-	transition: opacity 0.25s linear;
+	animation: fade-in 0.25s linear;
 }
 /* Hidden element */
 .hidden {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s 0.25s, opacity 0.25s linear, font-size 0.5s;
+	display: none;
+}
+/* Animation fade-in */
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 /* Body */
 body {
@@ -130,8 +135,7 @@ footer > .link {
 	position: fixed;
 	width: 1.5em;
 	height: 1.5em;
-	bottom: 0.25em;
-	margin: auto 0;
+	top: 48.25em;
 }
 footer > .right-site {
 	right: 3.5em;
@@ -202,10 +206,6 @@ footer > .right-git {
 /* Animation rotate */
 @keyframes rotate {
 	100% {
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
