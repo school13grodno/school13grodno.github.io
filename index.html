@@ -1021,7 +1021,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Row 4 --><div style="min-height: 50%;" class="wrap column update">
+				<!-- Row 4 --><div style="min-height: 50%;" class="row wrap column last update">
 				<div class="row text center-burlywood">Наши будни</div>
 				<!-- Row 5 -->
 				<div class="row wrap flex-2">
@@ -1193,9 +1193,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Expander -->
-	<div style="position: absolute; width: 0; height: 0;">
+		<!-- Expander -->
 		<div id="expander" class="fixed hidden" onclick="closeBlock();"></div>
 	</div>
 	<!-- Footer -->
@@ -1205,20 +1203,5 @@
 		<a class="link right-git" title="Перейти на Github" href="https://github.com/school13grodno/school13grodno.github.io"></a>
 	</footer>
 	<script src="scripts/script.js"></script>
-	<!-- Registration service worker -->
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function() {
-				navigator.serviceWorker.register('/pwabuilder-sw.js').then(
-					function(registration) {
-						console.log('ServiceWorker registration successful with scope: ', registration.scope);
-					},
-					function(error) {
-						console.log('ServiceWorker registration failed: ', error);
-					}
-				);
-			});
-		}
-	</script>
 </body>
 </html>
