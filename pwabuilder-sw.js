@@ -1,6 +1,6 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.3.5";
-const _PREVIOUS_VERSION = "room-of-military-glory_v1.3.4";
+const _LATEST_VERSION = "room-of-military-glory_v1.3.6";
+const _PREVIOUS_VERSION = "room-of-military-glory_v1.3.5";
 /* Resource cache */
 const _ASSETS = [
 	"/",
@@ -38,10 +38,11 @@ self.addEventListener('activate', async (event) => {
 				/* Delete previous version */
 				caches.delete(_PREVIOUS_VERSION);
 			}
+		}).then(() => {
+			/* Use updated service worker */
+			self.clients.claim();
 		})
 	);
-	/* Use updated service worker */
-	self.clients.claim();
 });
 /* Use service worker */
 self.addEventListener('fetch', async (event) => {
