@@ -1,5 +1,5 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.4.0";
+const _LATEST_VERSION = "room-of-military-glory_v1.4.1";
 /* Resource cache */
 const _ASSETS = [
 	"/",
@@ -30,7 +30,7 @@ self.addEventListener('install', async (event) => {
 	self.skipWaiting();
 });
 /* Activate service worker */
-self.addEventListener('activate', async (event) => {
+self.addEventListener('activate', (event) => {
 	event.waitUntil(
 		caches.keys().then((names) => {
 			for (let name of names) {
@@ -39,25 +39,27 @@ self.addEventListener('activate', async (event) => {
 					caches.delete(name);
 				}
 			}
-		}).then(() => {
-			/* Use updated service worker */
-			self.clients.claim();
 		})
 	);
+	/* Use updated service worker */
+	self.clients.claim();
 });
 /* Use service worker */
-self.addEventListener('fetch', async (event) => {
-	event.respondWith(
-		caches.match(event.request).then((resp) => {
-			/* Return from cache if available
-				else add to cache */
-			return resp || fetch(event.request).then((response) => {
-				let _responseClone = response.clone();
-				caches.open(_LATEST_VERSION).then((cache) => {
-					cache.put(event.request, _responseClone);
+self.addEventListener('fetch', (event) => {
+	/* Skip cross-origin requests, like those for Google Analytics */
+	if (event.request.url.startsWith(self.location.origin)) {
+		event.respondWith(
+			caches.match(event.request).then((resp) => {
+				/* Return from cache if available
+					else add to cache */
+				return resp || fetch(event.request).then((response) => {
+					let _responseClone = response.clone();
+					caches.open(_LATEST_VERSION).then((cache) => {
+						cache.put(event.request, _responseClone);
+					});
+					return response;
 				});
-				return response;
-			});
-		}).catch((error) => console.log(error))
-	);
+			}).catch((error) => console.log(error))
+		);
+	}
 });
