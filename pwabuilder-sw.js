@@ -1,6 +1,5 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.3.6";
-const _PREVIOUS_VERSION = "room-of-military-glory_v1.3.5";
+const _LATEST_VERSION = "room-of-military-glory_v1.4.0";
 /* Resource cache */
 const _ASSETS = [
 	"/",
@@ -33,10 +32,12 @@ self.addEventListener('install', async (event) => {
 /* Activate service worker */
 self.addEventListener('activate', async (event) => {
 	event.waitUntil(
-		caches.has(_PREVIOUS_VERSION).then((hasCache) => {
-			if (hasCache) {
-				/* Delete previous version */
-				caches.delete(_PREVIOUS_VERSION);
+		caches.keys().then((names) => {
+			for (let name of names) {
+				if (name !== _LATEST_VERSION) {
+					/* Delete previous version */
+					caches.delete(name);
+				}
 			}
 		}).then(() => {
 			/* Use updated service worker */
