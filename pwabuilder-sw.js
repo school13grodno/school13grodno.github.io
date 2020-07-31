@@ -1,5 +1,5 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.4.4";
+const _LATEST_VERSION = "room-of-military-glory_v1.5.0";
 /* Resource cache */
 const _ASSETS = [
 	"/",
@@ -54,7 +54,6 @@ self.addEventListener('fetch', (event) => {
 					else add to cache */
 				return resp || fetch(event.request).then((response) => {
 					/* Add to cache if response status OK */
-					console.log(response.status);
 					if (response.status == '200') {
 						let _responseClone = response.clone();
 						caches.open(_LATEST_VERSION).then((cache) => {
