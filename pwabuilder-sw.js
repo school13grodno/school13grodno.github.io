@@ -1,11 +1,11 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.4.1";
+const _LATEST_VERSION = "room-of-military-glory_v1.4.2";
 /* Resource cache */
 const _ASSETS = [
 	"/",
 	"style.css",
 	"scripts/script.js",
-	"images/bg-img--lazy.gif",
+	"images/bg-img_lazy.gif",
 	"images/bg-img.gif",
 	"images/camera.svg",
 	"images/close.svg",
