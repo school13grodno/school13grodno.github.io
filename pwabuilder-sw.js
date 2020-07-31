@@ -53,10 +53,13 @@ self.addEventListener('fetch', (event) => {
 				/* Return from cache if available
 					else add to cache */
 				return resp || fetch(event.request).then((response) => {
-					let _responseClone = response.clone();
-					caches.open(_LATEST_VERSION).then((cache) => {
-						cache.put(event.request, _responseClone);
-					});
+					/* Add to cache if response status OK */
+					if (response.status.ok) {
+						let _responseClone = response.clone();
+						caches.open(_LATEST_VERSION).then((cache) => {
+							cache.put(event.request, _responseClone);
+						});
+					}
 					return response;
 				});
 			}).catch((error) => console.log(error))
