@@ -1,11 +1,11 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.4.1";
+const _LATEST_VERSION = "room-of-military-glory_v1.4.2";
 /* Resource cache */
 const _ASSETS = [
 	"/",
 	"style.css",
 	"scripts/script.js",
-	"images/bg-img--lazy.gif",
+	"images/bg-img_lazy.gif",
 	"images/bg-img.gif",
 	"images/camera.svg",
 	"images/close.svg",
@@ -53,10 +53,13 @@ self.addEventListener('fetch', (event) => {
 				/* Return from cache if available
 					else add to cache */
 				return resp || fetch(event.request).then((response) => {
-					let _responseClone = response.clone();
-					caches.open(_LATEST_VERSION).then((cache) => {
-						cache.put(event.request, _responseClone);
-					});
+					/* Add to cache if response status OK */
+					if (response.status.ok) {
+						let _responseClone = response.clone();
+						caches.open(_LATEST_VERSION).then((cache) => {
+							cache.put(event.request, _responseClone);
+						});
+					}
 					return response;
 				});
 			}).catch((error) => console.log(error))
