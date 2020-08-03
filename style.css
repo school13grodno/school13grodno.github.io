@@ -550,6 +550,11 @@ p {
 .active-fixed {
 	overflow-x: hidden !important;
 }
+/* Hero 10% */
+.hero-10 > .img-hero {
+	-webkit-flex: 1 1 10%;
+	flex: 1 1 10%;
+}
 
 .update {
 	position: relative;
