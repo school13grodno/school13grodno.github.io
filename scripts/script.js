@@ -5,14 +5,14 @@ function setWidthHeightFontSizeBody() {
 	let _clientHeight = document.documentElement.clientHeight;
 	let _body = document.body;
 	/* Width body equals 50% height's, multiply on 7 stands plus margin */
-	let _minWidthBody = _clientHeight / 2 * 7 + (_clientHeight * 0.02 * 12);
+	let _minWidthBody = _clientHeight * 0.0212 * 25 * 7 + (_clientHeight * 0.0212 * 12);
 	/* If the body width is less than width client's */
 	if (_minWidthBody > _clientWidth) _body.style.width = _minWidthBody + 'px';
 	else _body.style.width = '';
 	/* Height */
 	_body.style.height = _clientHeight + 'px';
 	/* Font size */
-	_body.style.fontSize = _clientHeight * 0.02 + 'px';
+	_body.style.fontSize = _clientHeight * 0.0212 + 'px';
 };
 window.onload = function() {
 	setWidthHeightFontSizeBody();
@@ -77,8 +77,8 @@ function closeBlock() {
 	if (_ACTIVE_INFO != "") {
 		document.body.classList.remove('active-fixed');
 		let _element = document.getElementById(_ACTIVE_INFO);
-		_element.classList.remove('visible');
 		_element.classList.add('hidden');
+		_element.classList.remove('visible');
 		_element.style.fontSize = '';
 		_ACTIVE_INFO = "";
 	}
@@ -98,7 +98,7 @@ function showBlock(id) {
 			_elemet.querySelector(".resize").querySelector("img").style.width = _elemet.querySelector(".ba-slider").offsetWidth  + 'px';
 		}
 		_elemet.classList.add('visible');
-	}			
+	}
 };
 /* Click for img-text */
 [].forEach.call(document.getElementsByClassName("img-text"), function(el) {
