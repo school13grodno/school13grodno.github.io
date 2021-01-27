@@ -66,7 +66,7 @@ window.onresize = function() {
 		let _element = document.getElementById(_ACTIVE_INFO);
 		_element.style.fontSize = onResize_FontSize();
 		if (_ACTIVE_INFO.indexOf('btn-photo') !== -1) {
-			_elemet.querySelector(".resize").querySelector("img").style.width = _elemet.querySelector(".ba-slider").offsetWidth  + 'px';
+			_element.querySelector(".resize").querySelector("img").style.width = _element.querySelector(".ba-slider").offsetWidth  + 'px';
 		}
 	}
 };
@@ -90,13 +90,13 @@ function showBlock(id) {
 	}
 	if (id != "") {
 		_ACTIVE_INFO = id;
-		let _elemet = document.getElementById(_ACTIVE_INFO);
-		_elemet.style.fontSize = onResize_FontSize();
+		let _element = document.getElementById(_ACTIVE_INFO);
+		_element.style.fontSize = onResize_FontSize();
 		document.body.classList.add('active-fixed');
-		_elemet.classList.remove('hidden');
+		_element.classList.remove('hidden');
 		if (id.indexOf('btn-photo') !== -1) {
-			_elemet.querySelector(".resize").querySelector("img").style.width = _elemet.querySelector(".ba-slider").offsetWidth  + 'px';
+			_element.querySelector(".resize").querySelector("img").style.width = _element.querySelector(".ba-slider").offsetWidth  + 'px';
 		}
-		_elemet.classList.add('visible');
+		_element.classList.add('visible');
 	}
 };
