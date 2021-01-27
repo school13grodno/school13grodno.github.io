@@ -1,5 +1,5 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.5.5";
+const _LATEST_VERSION = "room-of-military-glory_v1.5.6";
 /* Resource cache */
 const _ASSETS = [
 	"/",
