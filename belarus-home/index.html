@@ -3,350 +3,19 @@
 <html lang="be-BE">
 <head>
 	<meta charset="utf-8">
-	<link rel="shortcut icon" type="image/png" href="https://content.schools.by/13grodno/library/favicon.png">
-	<link rel="shortcut icon" type="image/svg+xml" href="https://content.schools.by/13grodno/library/favicon.svg">
+	<meta name="viewport" content="height=device-height, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
 	<title>Музейны пакой «Беларуская хатка»</title>
-	<style>
-		body {
-			display: flex;
-			flex-flow: column nowrap;
-			width: 100%;
-			height: 100vh;
-			font-size: 20px;
-			font-family: "PT Sans", sans-serif;
-			color: #000000;
-			padding: 0;
-			margin: 0;
-			background-color: rgba(245, 203, 125, 0.55);
-			background: url(https://content.schools.by/13grodno/library/Main_background.jpg) no-repeat center center fixed;
-			background-size: cover;
-		}
-		header {
-			position: fixed;
-			flex: 0 0 auto;
-			display: flex;
-			flex-flow: row nowrap;
-			justify-content: space-between;
-			vertical-align: middle;		
-			top: 0;
-			left: 0;
-			right: 0;			
-			height: auto;
-			padding: 0.5em 1.5em;			
-			background-color: rgba(245, 203, 125, 0.95);
-		}
-		header a {
-			text-decoration: none;
-			color: #000000;
-		}
-		header > .title {
-			font-size: 1.5em;
-			margin: auto 0;
-		}
-		header > .menu-wrap {
-			min-width: 50px;
-		}
-		nav {
-			position: fixed;
-			top: 0.25em;
-			right: 5em;
-			display: flex;
-			flex-flow: column;
-			width: 200px;
-			max-width: 200px;
-			padding: 0.25em;
-			background-color: rgba(165, 42, 42, 1);
-			border-radius: 1em;
-		}
-		nav > input[type=radio] {
-			position: relative;		
-			width: 0;
-			height: 0;
-			padding: 0;
-			margin: 0;
-			opacity: 0 !important;
-		}
-		.btn {
-			display: inline-block;
-			text-align: center;
-			vertical-align: middle;
-			text-decoration: none;
-			cursor: pointer;
-			user-select: none;
-			font-size: 1em;
-			font-weight: 700;
-			line-height: 1;
-			background-color: rgba(255, 255, 255, 1);
-			border: 0.25em solid transparent;
-			padding: 0.25em 0.5em;
-			margin: 0.5em 0;
-			border-radius: 1em;
-			transition:
-				0.25s color ease-in-out, 
-				0.25s background-color ease-in-out, 
-				0.25s border-color ease-in-out;
-		}
-		a.btn {
-			color: #000000;
-		}
-		.btn-orange {
-			border-color: #ffc107;
-		}
-		.btn-orange:hover {
-			background-color: #ffc107;
-			border-color: #000000;
-		}
-		input[type=radio]:checked + label {
-			background-color: #ffc107;
-		}
-		main {
-			display: flex;
-			flex: 1 0 auto;
-			height: auto;
-			padding: 3em 1.5em 0;
-		}
-		main > .contents {
-			flex: 10 1 auto;
-			padding: 0.5em 0;
-			align-self: stretch;			
-			margin: 0;		
-		}
-		main img {
-			border-radius: 0.5em;
-		}
-		.contents > section {
-			padding: 0.5em;
-			background-color: rgba(255, 255, 255, 0.75);
-			border-radius: 1em;
-		}
-		.contents > section h1 {
-			text-align: center;
-			font-size: 1.25em;
-			margin: 0.5em 0;
-		}
-		.contents > section h2 {
-			text-align: center;
-			font-size: 1em;
-			margin: 0.5em 0;
-		}
-		.contents > section > :first-child, .text > :first-child, .crafts > .craft:first-child {
-			margin-top: 0;
-		}
-		.contents > section > :last-child, .text > :last-child, .crafts > .craft:last-child {
-			margin-bottom: 0;
-		}
-		.contents p {
-			text-align: center;
-			padding: 0;
-			margin: 0.5em 0;			
-		}
-		.fragments, .subjects {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-		.fragment, .subject {
-			display: flex;
-			flex-wrap: wrap;
-			max-width: 325px;
-			margin: 0.5em;
-		}		
-		.fragment > img, .subject > img {
-			width: 100%;
-			max-height: 275px;
-		}
-		.subject.img-2 {
-			justify-content: center;
-			max-width: 650px;
-		}
-		.subject.img-2 > img {
-			width: 320px;
-			max-height: 275px;
-		}
-		.subject.img-2 > img:first-child {
-			margin-right: 0.25em;
-		}
-		.subject.img-2 > img:nth-child(2) {
-			margin-left: 0.25em;
-		}
-		.fragment > p, .subject > p {
-			text-align: center;
-		}
-		.fragment:nth-child(3) {
-			font-size: 0.8em;
-		}
-		.fragment:nth-child(6) {
-			font-size: 0.7em;
-		}
-		.fragment:nth-child(8) {
-			font-size: 0.9em;
-		}
-		.crafts {
-			display: flex;
-			flex-flow: column nowrap;
-		}
-		.crafts > .craft {
-			margin: 0.5em 0;
-		}
-		.craft > .title {
-			margin: 0;
-		}
-		.craft > .img-left {
-			float: left;
-			width: 100%;
-			max-width: 425px;
-			margin-right: 0.5em;
-			margin-bottom: 0.5em;
-		}
-		.craft > .img-right {
-			float: right;
-			width: 100%;
-			max-width: 425px;
-			margin-left: 0.5em;
-			margin-bottom: 0.5em;			
-		}
-		.craft > .wrap-img {
-			display: flex;
-			flex-flow: row wrap;
-			justify-content: center;
-			align-items: center;
-			align-content: center;
-			width: 100%;
-		}
-		.wrap-img > img {
-			max-width: 340px;
-			margin: 5px;
-			flex: 1 1 auto;
-			align-self: stretch;
-		}
-		.events {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-		}
-		.event {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			max-width: 325px;
-		}
-		.event > .title {
-			margin-top: 0;
-		}
-		.event > a.btn {
-			margin: 0;
-		}
-		footer {
-			display: flex;
-			flex: 0 0 auto;
-			vertical-align: middle;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			height: auto;
-			padding: 0 1.5em;
-			background-color: rgba(229, 230, 224, 0.75);
-		}
-		footer > .map, footer > .contacts {
-			flex: 1 1 auto;
-			align-self: stretch;
-			margin: 0;
-		}
-		footer > .contacts {
-			display: flex;
-			flex-wrap: wrap;
-			align-self: auto;
-			justify-content: space-between;
-			flex: 3 1 auto;
-			padding-left: 0.5em;
-		}
-		.contacts > h2 {
-			text-align: center;
-			font-size: 1em;
-			width: 100%;
-			margin: 0.5em 0;
-		}
-		.contacts > .address {
-			margin-right: 1em;
-		}
-		.mail > a {
-			text-decoration: none;
-		}
-		.contacts > .surname {
-			width: 100%;
-			text-align: center;
-			font-weight: bold;
-		}
-		.menu-icon {
-			position: relative;
-			top: 40%;
-			left: 50%;			
-			cursor: pointer;
-			transform: translate(-50%, -50%);
-		}
-		.menu-icon span {
-			display: block;
-			width: 100%;
-			height: 6px;
-			background-color: #fff;
-			margin-bottom: 8px;
-			box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-			transition: .5s;
-		}
-		.menu-icon.active span:nth-child(2) {
-			transform: translateX(-50px);
-			opacity: 0;
-		}
-		.menu-icon.active span:nth-child(1) {
-			transform: rotateY(180deg) rotateZ(45deg) translate(10px, 10px);
-		}
-		.menu-icon.active span:nth-child(3) {
-			transform: rotateY(180deg) rotateZ(-45deg) translate(10px, -10px);
-		}
-		.menu-icon p {
-			display: block;
-			position: absolute;
-			bottom: -25px;
-			width: 100%;
-			user-select: none;
-			text-transform: uppercase;
-			text-align: center;
-			font-size: 12px;
-			font-family: sans-serif;
-			font-weight: bold;
-			color: #fff;
-			background-color: #a52a2a;
-			box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-			backface-visibility: hidden;			
-			transition: .5s;
-		}
-		.menu-icon.active p.menu {
-			transform: rotateY(180deg);
-		}
-		.menu-icon p.close {
-			transform: rotateY(180deg);
-		}
-		.menu-icon.active p.close {
-			transform: rotateY(0deg);
-			background-color: transparent;
-			color: #a52a2a;
-			font-size: 10px;
-		}
-		.passive {
-			display: none;
-		}
-		.active {
-			display: block;
-		}
-		.interior-museum-content > h1:first-child, .hous-items-content > h1:first-child {
-			margin-bottom: 0;
-		}
-	</style>
+	<meta name="author" content="Коллектив СШ №13 г.Гродно" />
+	<meta name="description" content="«Музейны пакой «Беларуская хатка»» - государственного учреждения образования «Средняя школа №13 г.Гродно»" />
+	<link rel="canonical" href="https://school13grodno.github.io/" />
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header>
-		<a class="title" href="">Музейны пакой «Беларуская хатка»</a>		
+		<a class="title" href="">Музейны пакой «Беларуская хатка»</a>
+		<!-- Button menu -->
 		<div class="menu-wrap">
 			<div role="button" class="menu-icon">
 				<span></span>
@@ -357,6 +26,7 @@
 			</div>
 		</div>
 	</header>
+	<!-- Menu --->
 	<nav class="passive">
 		<input id="about-the-museum" type="radio" name="nav" checked>
 		<label class="btn btn-orange" for="about-the-museum">Пра музейны пакой</label>
@@ -404,38 +74,38 @@
 				<h1>Фрагменты інтэр'еру</h1>
 				<div class="fragments">
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-1.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-1.jpg">
 						<p>Самым важным у хаце заўсёды быў чырвоны кут (покуць), які служыў як бы хатнім алтаром. У ім вісела ікона, упрыгожаная ручнікамі. У гэтым месцы здзяйсняліся рытуальныя дзеянні абрадаў каляндарнага і жыццёвага цыклу.</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-2.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-2.jpg">
 						<p>Быў у доме "бабін кут". Там ніколі не спалі. Віселі ў гэтым кутку палічкі з посудам, стаяла лаўка, акно выглядвала абавязкова на двор. За "бабіным кутом" замацавалася функцыя кухні.</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-3.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-3.jpg">
 						<p>Смецце нашы продкі выносілі ўвечары, каб не пакідаць у доме бруд, а не тое яго мог пакінуць дамавік - неафіцыйны захавальнік дома.<br />Вокны беларускай хаты выходзяць у двор і на вуліцу, а адна сцяна абавязкова глухая, каб захоўваць цяпло ў доме і не зазіраць у суседні двор, а потым не пляткарыць на вольным часе. Лепш сачыць за парадкам ва ўласнай хаце.</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-4.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-4.jpg">
 						<p>Пад абразамі - стол, сядзелі на лавах. На стале - каравай хлеба, збан малака або квасу.</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-5.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-5.jpg">
 						<p>Стол звычайна засцілалі вышытым абрусам. Гэта абавязковы атрыбут традыцыйнай сямейнай і каляндарнай абраднасці беларусаў (уваходзіў у пасаг нявесты, ім накрывалі стол на Каляды, Вялікдзень і інш. святы).</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-6.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-6.jpg">
 						<p>Печ карміла, сагравала, лячыла. Паводле падання, на Дзяды  праз трубу ў дом спускаюцца душы памерлых  продкаў.<br />
 						Каля печы - качарга, вілкі, рыдлёўка, на якой саджалі хлеб у печ. У час навальніцы хлебную лапату выстаўлялі на вуліцу - яна абараняла хату ад пажару.<br />
 						Пад печчу ў халодныя зімы трымалі курэй. Каля печы дзежка - знак дастатку і дабрабыту. У ёй замешвалі цеста, а старую - ніколі не выкідвалі.<br />
 						Спалі дамачадцы на палацях, якія маглі быць і двух'яруснымі. Ніжні ярус - для пажылых чальцоў сям'і, верхні - для маладых. Старыя любілі спаць на печы. Маладым зімой адводзілі каморы, а ўлетку сенавал або вышкі.</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-7.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-7.jpg">
 						<p>У народным жыллі ложак набыў пашырэнне з 19 ст., замяніў сабой у інтэр’еры хаты пол і палаці, часам бытавалі паралельна. Спінкі ложкаў звычайна змацоўвалі бакавінамі, на якія клалі дашчаны насціл, на яго сяннік і пасцель.</p>
 					</div>
 					<div class="fragment">
-						<img alt="Фрагмент інтэр'еру" src="https://content.schools.by/13grodno/library/Fragment-8.jpg">
+						<img alt="Фрагмент інтэр'еру" src="images/fragments/fragment-8.jpg">
 						<p>Асаблівае месца для нованароджанага. Самыя маленькія адпачывалі ў калысцы, падвешанай да столі. Для зручнасці калыхання да калыскі мацавалі вяроўку (можна было калыхаць нагой або на адлегласці). Такую калыску было зручна браць ў поле: бацькі працуюць, а малое спіць спакойна ў цяньку.</p>
 					</div>
 				</div>
@@ -445,35 +115,35 @@
 				<p>Нашы продкі былі людзі ўмелыя, практычна ўсё для свайго карыстання рабілі сваімі рукамі. Вось як пра гэта пішуць гісторыкі:<br /><strong>«Кожная вёска - гэта своеасаблівая дзяржава, з усім сваім - моваю, звычаямі, норавамі і побытам. Ды дзе вёска - кожны гаспадар, кожная гаспадыня імкнуліся быць ва ўсім незалежнымі, самастойнымі, абыходзіцца без чыёй бы і якой бы там ні было дапамогі. Трэба былі саха, барана, плуг, серп, калёсы, сані, сякера, граблі, піла, каса, лыжка, міска, гаршчок, вядро, дзежка, бочка - рабілі;<br />трэба былі хамут, церассядзёлак, боты, світка, кажух, шапка, сарочка, штаны, рукавіцы - шылі;<br />трэба былі вяроўка, атосы, лейцы, аборы - вілі;<br />трэба былі палатно, абрус, ручнік, коўдра, посцілка - ткалі...<br /> Самі, кожны сабе, будавалі хаты, хлявы, гумны, ёўні, лазні…»</strong></p>
 				<div class="subjects">
 					<div class="subject">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-1_lpiu2Pj.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-1.jpg">
 						<p>Паўсюднае распаўсюджванне ў Беларусі ў XIX ст. атрымалі куфры (куфры, скрыни) для складання тканіны, адзення, бялізны.</p>
 					</div>
 					<div class="subject img-2">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-2.jpg">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-3.jpg">					
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-2.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-3.jpg">					
 						<p>Выпуклая пасудзіна з вузкім горлам, плоскім дном, з адным або двума вушкамі, і ў Беларусі, і на Украіне называецца гляк. У гляку насілі воду ў поле, настойвалі лекавыя травы, захоўвалі раслінны алей. Трохі адрозніваўся ад гляку збан – высокі посуд з выпуклымі бакамі,  некалькі аканаваным горлычкам, з носікам і ручкай. Пражэльнік служыў у гаспадарцы для печані, сушкі грыбоў і ягад.</p>
 					</div>
 					<div class="subject img-2">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-4.jpg">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-5.jpg">					
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-4.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-5.jpg">					
 						<p>З спрадвечных часоў чалавецтва карысталася тымі ці іншымі відамі посуду. Спачатку посуд выраблялася пераважна з гліны - самага даступнага ў апрацоўцы гарачатрывалага і ўстойлівага да вадкасці матэрыялу. У далейшым пачатку з'яўляцца чыгунны посуд. У даўніну яе ўключалі ў пасаг і перадавалі з пакалення ў пакаленне.</p>
 					</div>
 					<div class="subject img-2">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-6.jpg">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-7.jpg">				
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-6.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-7.jpg">				
 						<p>Маслабойка шырока была вядома і ў Расіі, і на Украіне, і ў Беларусі. Гэта звычайна высокая, наканаваная да гары бочка, у вечцы адтуліна для калатоўкі (біла), да ніжняга канца якой (ўдарная частка) мацавалі круг з адтулінамі або крыжавіну.</p>
 					</div>
 					<div class="subject">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-8.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-8.jpg">
 						<p>Доўга ў Беларусі карысталіся бязменам: ручнымі рычажнымі вагамі з металічным або драўляным стрыжнем з гірай на адным канцы і кручком або чашай на другім для ўтрымання грузу.</p>
 					</div>
 					<div class="subject">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-9.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-9.jpg">
 						<p>З найстаражытных часоў людзі даглядалі за сваім адзеннем, каб яно пасля мыцця выглядала прыгожа і ахайна. Менавіта для гэтых мэт быў вынайдзены прас.</p>
 					</div>
 					<div class="subject img-2">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-10.jpg">
-						<img alt="Прадмет хатняга ўжытку" src="https://content.schools.by/13grodno/library/Subject-11.jpg">				
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-10.jpg">
+						<img alt="Прадмет хатняга ўжытку" src="images/subjects/subject-11.jpg">				
 						<p>У сярэдзіне XVIII стагоддзя найбольш распаўсюджанымі былі награвальныя прасы - яны ставіліся ў печ і разаграваліся. У мінулым для нагрэву прасаў іх ставілі на печ або ў іх (вугальны прас) клалі гарачыя бярозавыявуглі.</p>
 					</div>										
 				</div>
@@ -484,19 +154,19 @@
 				<div class="crafts">
 					<div class="craft">
 						<h2 class="title">Ткацтва</h2>
-						<img alt="Рамёствы" class="img-left" src="https://content.schools.by/13grodno/library/craft1-title.jpg">
+						<img alt="Рамёствы" class="img-left" src="images/crafts/craft1-title.jpg">
 						<div class="text">
 							<p>Неад'емнай рэччу кожнай хаты былі кросны - станок для хатняга ткацтва.</p>
 							<p>Сыравінай для яго служылі ільняныя, шарсцяныя, шаўковыя, сінтэтычныя ніткі. Узімку хата ператваралася ў маленькую майстэрню, бо летніх штодзённых работ ужо не было, заставалася толькі глядзець за жывёлай. Таму тут і ткалі палотны, і, пры святле лучыны або каганца шылі вопратку, вышывалі, вязалі.</p>
 							<p>Надзвычай рознабакова дэкаратыўныя якасці тканых вырабаў выявіліся ў посцілках і дыванах. Пры ўсёй разнастайнасці вырабаў тут таксама маюцца свае рэгіянальныя асаблівасці. Так, для Захаду Беларусі характэрна ярка выяўленая папярочная паласатасць.</p>
 						</div>
 						<div class="wrap-img">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-1-1.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-1-2.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-1-3.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-1-4.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-1-5.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-1-6.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-1-1.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-1-2.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-1-3.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-1-4.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-1-5.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-1-6.jpg">
 						</div>					
 					</div>
 					<div class="craft">
@@ -507,26 +177,26 @@
 							<p>Шырокім дыяпазонам вышыванага дэкору вылучаюцца ручнікі, якім надавалася надзвычай глыбокі сімвалічны і сакральны змест. Адсюль вялікая роля арнаменту, які сваімі вытокамі сягае ў глыбіню стагоддзяў.</p>
 						</div>
 						<div class="wrap-img">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-2-1.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-2-2.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-2-3.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-2-4.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-2-5_VSjV2RP.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-2-6_Wz22ouQ.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-2-1.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-2-2.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-2-3.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-2-4.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-2-5.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-2-6.jpg">
 						</div>
 					</div>
 					<div class="craft">
 						<h2 class="title">Пляценне</h2>
-						<img alt="Рамёствы" class="img-right" src="https://content.schools.by/13grodno/library/craft3-title.jpg">
+						<img alt="Рамёствы" class="img-right" src="images/crafts/craft3-title.jpg">
 						<div class="text">
 							<p>Самым старажытным з усіх рамёстваў, якія мы ведаем сёння, звычайна лічыцца пляценне. Адна з найбольш прывабных рысаў гэтага рамяства складаецца ў тым, што кожнае пакаленне людзей магло лёгка прыстасаваць яго да патрэбаў сваёй паўсядзённым жыцці. Навукоўцы лічаць, што пляцення чалавек навучыўся значна раней, чым ганчарным справе.</p>
 							<p>Плеценыя вырабы з лазы не толькі лёгкія, трывалыя і зручныя, але і цешаць вока натуральнай прыгажосцю і цеплынёй матэрыялу, выразным рытмам і разнастайнасцю ўзору.</p>
 							<p>На Беларусі пляценнем з саломкі займаліся здаўна. За плячыма гэтага рамяства не адна тысяча гадоў. Вядзе яно сваю гісторыю ад старадаўніх абрадаў, звязаных з культамі хлеба і саломы.</p>
 						</div>
 						<div class="wrap-img">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-3-1.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-3-2.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-3-3.jpg">							
+							<img alt="Рамёствы" src="images/crafts/craft-3-1.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-3-2.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-3-3.jpg">							
 						</div>
 					</div>
 					<div class="craft">
@@ -535,9 +205,9 @@
 							<p>Гісторыя гэтага віду рукадзелля налічвае сотні гадоў. Нягледзячы на ​​старажытнасць, вязанне кручком не страцілася ў сучаснай жыцця людзей, яно, як і раней, захапляе і высока цэніцца ва ўсім свеце. Вязанне кручком ўжывалі як для вырабу адзення цалкам (напрыклад, швэдар, шалік, сукенка і г. д.), так і аздобных элементаў адзення (рукавы, гузікі, абшэўкі і г. д.) або упрыгожванняў (сурвэткі, фіранкі і г. д.).</p>
 						</div>
 						<div class="wrap-img">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-4-1_ViRB0Mq.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-4-2.jpg">
-							<img alt="Рамёствы" src="https://content.schools.by/13grodno/library/craft-4-3.jpg">							
+							<img alt="Рамёствы" src="images/crafts/craft-4-1.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-4-2.jpg">
+							<img alt="Рамёствы" src="images/crafts/craft-4-3.jpg">							
 						</div>
 					</div>
 				</div>
@@ -582,8 +252,10 @@
 			};
 		};
 
+		// Default visible content for menu
 		showContent("about-the-museum");
 
+		// Added new content for new item menu
 		[].forEach.call(document.querySelectorAll("input"), function(el) {
 			el.addEventListener("change", (event) => {
 				showContent("about-the-museum");

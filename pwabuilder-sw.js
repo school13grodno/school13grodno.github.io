@@ -1,5 +1,5 @@
 /* Versions service worker */
-const _LATEST_VERSION = "room-of-military-glory_v1.5.6";
+const _LATEST_VERSION = "room-of-military-glory_v2.0.0";
 /* Resource cache */
 const _ASSETS = [
 	"/",
@@ -16,6 +16,7 @@ const _ASSETS = [
 	"images/open-book.svg",
 	"images/star.svg",
 	"images/school-logo.png",
+	"images/belarus-home-room.svg",
 	"images/github.svg"
 ];
 /* Install service worker */
