@@ -138,8 +138,12 @@ footer > .link {
 	top: 45.45em;
 }
 footer > .right-site {
-	right: 3.5em;
+	right: 5.5em;
 	background: url(images/school-logo.png) no-repeat center center /contain;
+}
+footer > .right-belarus-home {
+	right: 3.5em;
+	background: url(images/belarus-home-room.svg) no-repeat center center /contain;
 }
 footer > .right-git {	
 	right: 1.5em;
